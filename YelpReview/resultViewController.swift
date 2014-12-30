@@ -33,6 +33,15 @@ class resultViewController: UIViewController {
     @IBOutlet weak var resultText: UITextView!
     @IBOutlet weak var generateButton: UIButton!
    
+    @IBAction func copyToClipboardButton(sender: AnyObject) {
+        UIPasteboard.generalPasteboard().string = self.resultText.text
+        let alert = UIAlertView()
+        alert.title = "Done"
+        alert.message = "Your review is in clipboard. You can paste it now."
+        alert.addButtonWithTitle("OK")
+        alert.show()
+    }
+    
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
