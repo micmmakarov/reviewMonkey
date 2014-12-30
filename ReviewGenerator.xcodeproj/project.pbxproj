@@ -28,14 +28,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C0D0FF21A5097C000279404 /* YelpReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0D0FF21A5097C000279404 /* ReviewGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviewGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0D0FF61A5097C000279404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C0D0FF71A5097C000279404 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C0D0FF91A5097C000279404 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C0D0FFC1A5097C000279404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C0D0FFE1A5097C000279404 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4C0D10011A5097C000279404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4C0D10071A5097C000279404 /* YelpReviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YelpReviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0D10071A5097C000279404 /* ReviewGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviewGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0D100C1A5097C000279404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C0D100D1A5097C000279404 /* YelpReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpReviewTests.swift; sourceTree = "<group>"; };
 		4CE5B87A1A50A7B4006F79B3 /* resultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resultViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 		4C0D0FF31A5097C000279404 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C0D0FF21A5097C000279404 /* YelpReview.app */,
-				4C0D10071A5097C000279404 /* YelpReviewTests.xctest */,
+				4C0D0FF21A5097C000279404 /* ReviewGenerator.app */,
+				4C0D10071A5097C000279404 /* ReviewGeneratorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,9 +121,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C0D0FF11A5097C000279404 /* YelpReview */ = {
+		4C0D0FF11A5097C000279404 /* ReviewGenerator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C0D10111A5097C000279404 /* Build configuration list for PBXNativeTarget "YelpReview" */;
+			buildConfigurationList = 4C0D10111A5097C000279404 /* Build configuration list for PBXNativeTarget "ReviewGenerator" */;
 			buildPhases = (
 				4C0D0FEE1A5097C000279404 /* Sources */,
 				4C0D0FEF1A5097C000279404 /* Frameworks */,
@@ -133,14 +133,14 @@
 			);
 			dependencies = (
 			);
-			name = YelpReview;
+			name = ReviewGenerator;
 			productName = YelpReview;
-			productReference = 4C0D0FF21A5097C000279404 /* YelpReview.app */;
+			productReference = 4C0D0FF21A5097C000279404 /* ReviewGenerator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4C0D10061A5097C000279404 /* YelpReviewTests */ = {
+		4C0D10061A5097C000279404 /* ReviewGeneratorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C0D10141A5097C000279404 /* Build configuration list for PBXNativeTarget "YelpReviewTests" */;
+			buildConfigurationList = 4C0D10141A5097C000279404 /* Build configuration list for PBXNativeTarget "ReviewGeneratorTests" */;
 			buildPhases = (
 				4C0D10031A5097C000279404 /* Sources */,
 				4C0D10041A5097C000279404 /* Frameworks */,
@@ -151,9 +151,9 @@
 			dependencies = (
 				4C0D10091A5097C000279404 /* PBXTargetDependency */,
 			);
-			name = YelpReviewTests;
+			name = ReviewGeneratorTests;
 			productName = YelpReviewTests;
-			productReference = 4C0D10071A5097C000279404 /* YelpReviewTests.xctest */;
+			productReference = 4C0D10071A5097C000279404 /* ReviewGeneratorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +175,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4C0D0FED1A5097C000279404 /* Build configuration list for PBXProject "YelpReview" */;
+			buildConfigurationList = 4C0D0FED1A5097C000279404 /* Build configuration list for PBXProject "ReviewGenerator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -188,8 +188,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C0D0FF11A5097C000279404 /* YelpReview */,
-				4C0D10061A5097C000279404 /* YelpReviewTests */,
+				4C0D0FF11A5097C000279404 /* ReviewGenerator */,
+				4C0D10061A5097C000279404 /* ReviewGeneratorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,7 +239,7 @@
 /* Begin PBXTargetDependency section */
 		4C0D10091A5097C000279404 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4C0D0FF11A5097C000279404 /* YelpReview */;
+			target = 4C0D0FF11A5097C000279404 /* ReviewGenerator */;
 			targetProxy = 4C0D10081A5097C000279404 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -351,7 +351,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = YelpReview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReviewGenerator;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -364,7 +364,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = YelpReview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReviewGenerator;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -383,7 +383,7 @@
 				);
 				INFOPLIST_FILE = YelpReviewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReviewGeneratorTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YelpReview.app/YelpReview";
 			};
 			name = Debug;
@@ -398,7 +398,7 @@
 				);
 				INFOPLIST_FILE = YelpReviewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReviewGeneratorTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YelpReview.app/YelpReview";
 			};
 			name = Release;
@@ -406,7 +406,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C0D0FED1A5097C000279404 /* Build configuration list for PBXProject "YelpReview" */ = {
+		4C0D0FED1A5097C000279404 /* Build configuration list for PBXProject "ReviewGenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C0D100F1A5097C000279404 /* Debug */,
@@ -415,7 +415,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C0D10111A5097C000279404 /* Build configuration list for PBXNativeTarget "YelpReview" */ = {
+		4C0D10111A5097C000279404 /* Build configuration list for PBXNativeTarget "ReviewGenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C0D10121A5097C000279404 /* Debug */,
@@ -424,7 +424,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C0D10141A5097C000279404 /* Build configuration list for PBXNativeTarget "YelpReviewTests" */ = {
+		4C0D10141A5097C000279404 /* Build configuration list for PBXNativeTarget "ReviewGeneratorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C0D10151A5097C000279404 /* Debug */,

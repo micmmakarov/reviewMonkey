@@ -15,23 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4C0D0FF11A5097C000279404"
-               BuildableName = "YelpReview.app"
-               BlueprintName = "YelpReview"
-               ReferencedContainer = "container:YelpReview.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C0D10061A5097C000279404"
-               BuildableName = "YelpReviewTests.xctest"
-               BlueprintName = "YelpReviewTests"
-               ReferencedContainer = "container:YelpReview.xcodeproj">
+               BuildableName = "ReviewGenerator.app"
+               BlueprintName = "ReviewGenerator"
+               ReferencedContainer = "container:ReviewGenerator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C0D10061A5097C000279404"
-               BuildableName = "YelpReviewTests.xctest"
-               BlueprintName = "YelpReviewTests"
-               ReferencedContainer = "container:YelpReview.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C0D0FF11A5097C000279404"
-            BuildableName = "YelpReview.app"
-            BlueprintName = "YelpReview"
-            ReferencedContainer = "container:YelpReview.xcodeproj">
+            BuildableName = "ReviewGenerator.app"
+            BlueprintName = "ReviewGenerator"
+            ReferencedContainer = "container:ReviewGenerator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C0D0FF11A5097C000279404"
-            BuildableName = "YelpReview.app"
-            BlueprintName = "YelpReview"
-            ReferencedContainer = "container:YelpReview.xcodeproj">
+            BuildableName = "ReviewGenerator.app"
+            BlueprintName = "ReviewGenerator"
+            ReferencedContainer = "container:ReviewGenerator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C0D0FF11A5097C000279404"
-            BuildableName = "YelpReview.app"
-            BlueprintName = "YelpReview"
-            ReferencedContainer = "container:YelpReview.xcodeproj">
+            BuildableName = "ReviewGenerator.app"
+            BlueprintName = "ReviewGenerator"
+            ReferencedContainer = "container:ReviewGenerator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
