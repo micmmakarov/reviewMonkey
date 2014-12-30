@@ -28,7 +28,11 @@ class resultViewController: UIViewController {
         task.resume()
     }
     
+    @IBOutlet weak var businessType: UILabel!
+    @IBOutlet weak var stars: UILabel!
+    @IBOutlet weak var resultText: UITextView!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,12 +44,10 @@ class resultViewController: UIViewController {
     }
     
     func generate(stars: Int, business: String) -> Void {
-        getRating(4, business: "Bar") { (review) -> Void in
-            let alert = UIAlertView()
-            alert.title = "Hey"
-            alert.message = review
-            alert.addButtonWithTitle("Working!!")
-            alert.show()
+        getRating(stars, business: "Bar") { (review) -> Void in
+            self.businessType.text = business
+            self.stars.text = "\(stars) stars"
+            self.resultText.text = review
         }
     
     }
