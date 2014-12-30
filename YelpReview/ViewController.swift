@@ -12,10 +12,19 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
 
     @IBOutlet weak var businessPicker: UIPickerView!
     @IBOutlet weak var businessLabel: UILabel!
-    @IBOutlet weak var starsCount: UISlider!
     @IBOutlet var floatRatingView: FloatRatingView!
+    @IBOutlet weak var generateButton: UIButton!
     
-    let pickerData = ["Bar", "Hotel", "DMV"]
+    let pickerData = ["Bar", "Hotel", "DMV", "Massage-HE", "Hospital", "Funeral-Home", "Restaurant"]
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +42,12 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         self.floatRatingView.halfRatings = false
         self.floatRatingView.floatRatings = false
         
+        self.generateButton.layer.borderColor = self.UIColorFromRGB(0x81451D).CGColor
+        self.generateButton.layer.borderWidth = 2
+        self.generateButton.layer.cornerRadius = 10.0
+        //self.generateButton.backgroundColor = UIColor.blueColor()
+        self.generateButton.tintColor = self.UIColorFromRGB(0x81451D)
+
         // Segmented control init
         // self.ratingSegmentedControl.selectedSegmentIndex = 1
         
@@ -42,12 +57,13 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         
         businessPicker.dataSource = self
         businessPicker.delegate = self
+        businessPicker.selectRow(4, inComponent: 0, animated: true)
         self.navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
     }
 
     @IBAction func generate(sender: AnyObject) {
         let view = self.storyboard?.instantiateViewControllerWithIdentifier("result") as resultViewController
-        view.generate(Int(self.starsCount.value), business: "bar")
+        view.generate(Int(self.floatRatingView.rating), business: "bar")
         self.navigationController?.pushViewController(view, animated: true)
     }
     

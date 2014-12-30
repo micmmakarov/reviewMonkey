@@ -17,26 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-oM-iIw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-oM-iIw">
                                 <rect key="frame" x="32" y="92" width="534" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-7T-wps">
-                                <rect key="frame" x="27" y="314" width="541" height="31"/>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experience Quality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYw-AI-OrM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Experience Quality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYw-AI-OrM">
                                 <rect key="frame" x="29" y="285" width="537" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.22352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMi-cf-VmW">
-                                <rect key="frame" x="29" y="557" width="537" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="3zV-ou-Xa8"/>
-                                </constraints>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXb-TA-ArG">
+                                <rect key="frame" x="-1" y="106" width="600" height="162"/>
+                            </pickerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-DQ-w3w" customClass="FloatRatingView" customModule="YelpReview" customModuleProvider="target">
+                                <rect key="frame" x="147" y="320" width="300" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="StarEmpty"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="StarFull"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This will determine critical tone of the language." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukI-Bq-wjg">
+                                <rect key="frame" x="143" y="408" width="314" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMi-cf-VmW">
+                                <rect key="frame" x="29" y="528" width="537" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Generate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -52,35 +64,12 @@
                                     <action selector="generate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yuA-w0-wTQ"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXb-TA-ArG">
-                                <rect key="frame" x="-1" y="106" width="600" height="162"/>
-                            </pickerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-DQ-w3w" customClass="FloatRatingView" customModule="YelpReview" customModuleProvider="target">
-                                <rect key="frame" x="175" y="333" width="300" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="StarEmpty"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="StarFull"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Xdh-7T-wps" firstAttribute="leading" secondItem="tYw-AI-OrM" secondAttribute="leading" id="6it-aq-gfu"/>
-                            <constraint firstItem="tYw-AI-OrM" firstAttribute="top" secondItem="JXb-TA-ArG" secondAttribute="bottom" constant="17" id="87n-53-K9q"/>
-                            <constraint firstItem="Xdh-7T-wps" firstAttribute="trailing" secondItem="tYw-AI-OrM" secondAttribute="trailing" id="BH0-7h-9w8"/>
-                            <constraint firstItem="JXb-TA-ArG" firstAttribute="centerX" secondItem="3ac-oM-iIw" secondAttribute="centerX" id="GqR-5h-1Gk"/>
-                            <constraint firstItem="JXb-TA-ArG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-17" id="Ing-Xl-sag"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JXb-TA-ArG" secondAttribute="trailing" constant="-15" id="KiI-aq-KOc"/>
-                            <constraint firstItem="JXb-TA-ArG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="W6h-75-tcE"/>
-                            <constraint firstItem="3ac-oM-iIw" firstAttribute="trailing" secondItem="tYw-AI-OrM" secondAttribute="trailing" id="a3D-xJ-Hoj"/>
-                            <constraint firstItem="3ac-oM-iIw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="bjr-vi-PIH"/>
-                            <constraint firstItem="3ac-oM-iIw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="cbp-eS-CGs"/>
-                            <constraint firstItem="tYw-AI-OrM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="fqp-13-luU"/>
-                            <constraint firstItem="Xdh-7T-wps" firstAttribute="top" secondItem="tYw-AI-OrM" secondAttribute="bottom" constant="8" symbolic="YES" id="gzD-II-1oG"/>
-                            <constraint firstItem="Xdh-7T-wps" firstAttribute="trailing" secondItem="tMi-cf-VmW" secondAttribute="trailing" id="jti-kg-MO8"/>
-                            <constraint firstItem="tMi-cf-VmW" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="okB-RI-mPn"/>
-                            <constraint firstItem="Xdh-7T-wps" firstAttribute="leading" secondItem="tMi-cf-VmW" secondAttribute="leading" id="rjm-Rt-n54"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tMi-cf-VmW" secondAttribute="trailing" constant="18" id="bVm-2c-N8S"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tMi-cf-VmW" secondAttribute="bottom" constant="29" id="ivD-yP-di7"/>
+                            <constraint firstItem="tMi-cf-VmW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="pCv-AO-YfI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Review Details" id="3Yj-K9-vDr" colorLabel="IBBuiltInLabel-Orange">
@@ -94,7 +83,7 @@
                         <outlet property="businessLabel" destination="3ac-oM-iIw" id="LMy-J1-L4l"/>
                         <outlet property="businessPicker" destination="JXb-TA-ArG" id="8bV-dK-D63"/>
                         <outlet property="floatRatingView" destination="QOa-DQ-w3w" id="Zzq-lq-wKG"/>
-                        <outlet property="starsCount" destination="Xdh-7T-wps" id="dNn-0Y-T2Y"/>
+                        <outlet property="generateButton" destination="tMi-cf-VmW" id="icO-4R-t8u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
