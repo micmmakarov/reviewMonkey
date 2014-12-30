@@ -31,11 +31,25 @@ class resultViewController: UIViewController {
     @IBOutlet weak var businessType: UILabel!
     @IBOutlet weak var stars: UILabel!
     @IBOutlet weak var resultText: UITextView!
-    
+    @IBOutlet weak var generateButton: UIButton!
+   
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.generateButton.layer.borderColor = self.UIColorFromRGB(0x81451D).CGColor
+        self.generateButton.layer.borderWidth = 2
+        self.generateButton.layer.cornerRadius = 4.0
+        self.generateButton.tintColor = self.UIColorFromRGB(0x81451D)
+        //self.generateButton.backgroundColor = UIColor.blueColor()
     }
     
     override func didReceiveMemoryWarning() {

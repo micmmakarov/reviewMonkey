@@ -44,9 +44,9 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         
         self.generateButton.layer.borderColor = self.UIColorFromRGB(0x81451D).CGColor
         self.generateButton.layer.borderWidth = 2
-        self.generateButton.layer.cornerRadius = 10.0
-        //self.generateButton.backgroundColor = UIColor.blueColor()
+        self.generateButton.layer.cornerRadius = 4.0
         self.generateButton.tintColor = self.UIColorFromRGB(0x81451D)
+        //self.generateButton.backgroundColor = UIColor.blueColor()
 
         // Segmented control init
         // self.ratingSegmentedControl.selectedSegmentIndex = 1
