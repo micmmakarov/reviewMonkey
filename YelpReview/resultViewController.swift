@@ -13,6 +13,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     var stars: Int = 0;
     var business: String = "";
     var initialized = false;
+    var case1 = false;
     
     @IBOutlet var floatRatingView: FloatRatingView!
     @IBOutlet weak var businessType: UILabel!
@@ -20,6 +21,9 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     @IBOutlet weak var resultText: UITextView!
     @IBOutlet weak var generateButton: UIButton!
     @IBOutlet weak var resultContainer: UIView!
+    var back: UIImageView!
+    var front: UIImageView!
+    var result: UITextView!
 
     // Main API call
     func getRating(stars: Int, business: String, completion: (rating: String) -> Void) {
@@ -75,6 +79,15 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         self.floatRatingView.rating = 3
         self.initialized = true
         //self.generateButton.backgroundColor = UIColor.blueColor()
+        self.back = UIImageView(image: UIImage(named: "StarFull"))
+        self.front = UIImageView(image: UIImage(named: "StarEmpty"))
+        self.front.alpha = 0.01
+        self.back.alpha = 0.01
+        //let rect = CGRectMake(5, 5, resultContainer.frame.width - 10, resultContainer.frame.height - 10)
+        //self.result = UITextView(frame: rect)
+
+        self.resultContainer.addSubview(self.front)
+        self.resultContainer.addSubview(self.back)
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,24 +95,38 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    
     func generate(stars: Int, business: String) -> Void {
-        if initialized {
-            //self.resultContainer.hidden = true
-            UIView.animateWithDuration(0.5, animations: {
-                self.resultContainer.alpha = 0
-            })
+        //self.resultContainer.hidden = true
+        //UIView.animateWithDuration(0.5, animations: {
+        //    self.resultContainer.alpha = 0
+        //})
+        if self.initialized {
+            self.resultText.hidden = true
+            if self.case1 == false {
+                UIView.transitionFromView(self.back, toView: self.front, duration: 0.3, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+                self.case1 = true
+            } else {
+                UIView.transitionFromView(self.front, toView: self.back, duration: 0.3, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+                self.case1 = false
+            }
         }
         getRating(stars, business: "Bar") { (review) -> Void in
             self.stars = stars
             self.business = business
             self.businessType.text = business.capitalizedString
             self.floatRatingView.rating = Float(stars)
+            if self.resultText.hidden {self.resultText.hidden = false}
             self.resultText.text = review
-            self.resultText.setContentOffset(CGPointMake(0, 0), animated: true)
-//            if self.resultContainer.hidden {self.resultContainer.hidden = false}
-            UIView.animateWithDuration(0.5, animations: {
-                self.resultContainer.alpha = 1.0
-            })
+            self.resultText.setContentOffset(CGPointMake(0, 0), animated: false)
             
         }
     
