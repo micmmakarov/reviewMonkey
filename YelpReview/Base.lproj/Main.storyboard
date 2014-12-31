@@ -8,7 +8,7 @@
         <!--Review Details-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YelpReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReviewGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -38,7 +38,7 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXb-TA-ArG">
                                 <rect key="frame" x="-1" y="106" width="600" height="162"/>
                             </pickerView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-DQ-w3w" customClass="FloatRatingView" customModule="YelpReview" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-DQ-w3w" customClass="FloatRatingView" customModule="ReviewGenerator" customModuleProvider="target">
                                 <rect key="frame" x="147" y="320" width="300" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -122,7 +122,7 @@
         <!--Generated Review-->
         <scene sceneID="zo8-oL-RMV">
             <objects>
-                <viewController restorationIdentifier="result" storyboardIdentifier="result" title="Generated Review" id="eaG-8H-O5d" customClass="resultViewController" customModule="YelpReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="result" storyboardIdentifier="result" title="Generated Review" id="eaG-8H-O5d" customClass="resultViewController" customModule="ReviewGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xnz-hH-Ojg"/>
                         <viewControllerLayoutGuide type="bottom" id="x79-gs-0f6"/>
@@ -140,20 +140,32 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXG-nL-mea">
-                                        <rect key="frame" x="481" y="20" width="115" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZM-Di-V0H" customClass="FloatRatingView" customModule="ReviewGenerator" customModuleProvider="target">
+                                        <rect key="frame" x="423" y="16" width="172" height="38"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="MiniEmpty"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="MiniFull"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="halfRatings" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="floatRatings" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8901960784313725" green="0.72941176470588232" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="XjH-oQ-qfQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="FZM-Di-V0H" secondAttribute="bottom" constant="8" id="jCC-xj-0dL"/>
+                                    <constraint firstItem="FZM-Di-V0H" firstAttribute="top" secondItem="jXd-Or-fc9" secondAttribute="top" constant="16" id="p1b-qF-kb5"/>
+                                    <constraint firstAttribute="trailing" secondItem="FZM-Di-V0H" secondAttribute="trailing" constant="22" id="rY9-TD-nXC"/>
                                     <constraint firstItem="4Yk-oU-vAo" firstAttribute="leading" secondItem="jXd-Or-fc9" secondAttribute="leading" constant="22" id="sh5-nc-Yak"/>
                                     <constraint firstAttribute="height" constant="62" id="x8h-sO-oSo"/>
-                                    <constraint firstAttribute="trailing" secondItem="kXG-nL-mea" secondAttribute="trailing" constant="21" id="ybd-AM-8db"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zD2-r8-bit">
@@ -161,7 +173,7 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgz-bk-z9V">
                                         <rect key="frame" x="8" y="8" width="533" height="278"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -214,9 +226,9 @@
                     </view>
                     <connections>
                         <outlet property="businessType" destination="4Yk-oU-vAo" id="XMU-Oo-Nuw"/>
+                        <outlet property="floatRatingView" destination="FZM-Di-V0H" id="V7b-3x-0HN"/>
                         <outlet property="generateButton" destination="Zkc-hf-N4A" id="LMp-9G-dq3"/>
                         <outlet property="resultText" destination="Dgz-bk-z9V" id="mem-SK-JmR"/>
-                        <outlet property="stars" destination="kXG-nL-mea" id="nMz-v5-Mfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVw-6p-eAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,6 +278,8 @@
     </scenes>
     <resources>
         <image name="Clipboard" width="18" height="22"/>
+        <image name="MiniEmpty" width="23" height="21"/>
+        <image name="MiniFull" width="23" height="21"/>
         <image name="StarEmpty" width="40" height="39"/>
         <image name="StarFull" width="40" height="39"/>
     </resources>

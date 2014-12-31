@@ -8,7 +8,7 @@
 
 import UIKit
 
-class resultViewController: UIViewController {
+class resultViewController: UIViewController, FloatRatingViewDelegate {
     
     func getRating(stars: Int, business: String, completion: (rating: String) -> Void) {
         var url = NSURL(string: "http://www.yelpreviewgenerator.com/review/\(stars)/\(business).json")
@@ -28,6 +28,7 @@ class resultViewController: UIViewController {
         task.resume()
     }
     
+    @IBOutlet var floatRatingView: FloatRatingView!
     @IBOutlet weak var businessType: UILabel!
     @IBOutlet weak var stars: UILabel!
     @IBOutlet weak var resultText: UITextView!
@@ -58,6 +59,11 @@ class resultViewController: UIViewController {
         self.generateButton.layer.borderWidth = 2
         self.generateButton.layer.cornerRadius = 4.0
         self.generateButton.tintColor = self.UIColorFromRGB(0x81451D)
+        self.floatRatingView.delegate = self
+        self.floatRatingView.contentMode = UIViewContentMode.ScaleAspectFit
+
+        self.floatRatingView.rating = 3
+
         //self.generateButton.backgroundColor = UIColor.blueColor()
     }
     
@@ -68,11 +74,22 @@ class resultViewController: UIViewController {
     
     func generate(stars: Int, business: String) -> Void {
         getRating(stars, business: "Bar") { (review) -> Void in
-            self.businessType.text = business
-            self.stars.text = "\(stars) stars"
+            self.businessType.text = business.capitalizedString
+            self.floatRatingView.rating = Float(stars)
             self.resultText.text = review
         }
     
     }
+    
+    // MARK: FloatRatingViewDelegate
+    
+    func floatRatingView(ratingView: FloatRatingView, isUpdating rating:Float) {
+        // self.liveLabel.text = NSString(format: "%.2f", self.floatRatingView.rating)
+    }
+    
+    func floatRatingView(ratingView: FloatRatingView, didUpdate rating: Float) {
+        // self.updatedLabel.text = NSString(format: "%.2f", self.floatRatingView.rating)
+    }
+
 
 }
