@@ -28,12 +28,19 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         task.resume()
     }
     
+    var stars: Int = 0;
+    var business: String = "";
+    
     @IBOutlet var floatRatingView: FloatRatingView!
     @IBOutlet weak var businessType: UILabel!
-    @IBOutlet weak var stars: UILabel!
+    //@IBOutlet weak var stars: UILabel!
     @IBOutlet weak var resultText: UITextView!
     @IBOutlet weak var generateButton: UIButton!
    
+    @IBAction func regenerate(sender: AnyObject) {
+        generate(self.stars, business: self.business)
+    }
+    
     @IBAction func copyToClipboardButton(sender: AnyObject) {
         UIPasteboard.generalPasteboard().string = self.resultText.text
         let alert = UIAlertView()
@@ -74,6 +81,8 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     
     func generate(stars: Int, business: String) -> Void {
         getRating(stars, business: "Bar") { (review) -> Void in
+            self.stars = stars
+            self.business = business
             self.businessType.text = business.capitalizedString
             self.floatRatingView.rating = Float(stars)
             self.resultText.text = review

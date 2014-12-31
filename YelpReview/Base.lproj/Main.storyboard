@@ -195,6 +195,9 @@
                                 <state key="normal" title="Regenerate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="regenerate:" destination="eaG-8H-O5d" eventType="touchUpInside" id="XqN-x1-X0y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XJ-p8-GPe">
                                 <rect key="frame" x="216" y="457" width="168" height="22"/>
