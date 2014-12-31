@@ -22,7 +22,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="15z-l1-T1G"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -31,31 +31,22 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XhL-Kf-w9d"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.22352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXb-TA-ArG">
                                 <rect key="frame" x="-1" y="106" width="600" height="162"/>
+                                <color key="tintColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             </pickerView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-DQ-w3w" customClass="FloatRatingView" customModule="ReviewGenerator" customModuleProvider="target">
-                                <rect key="frame" x="147" y="320" width="300" height="80"/>
+                                <rect key="frame" x="147" y="320" width="300" height="67"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="StarEmpty"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="StarFull"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This will determine critical tone of the language." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukI-Bq-wjg">
-                                <rect key="frame" x="143" y="408" width="314" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="j5J-kM-pTC"/>
-                                    <constraint firstAttribute="height" constant="21" id="mvt-Xp-xdr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMi-cf-VmW">
                                 <rect key="frame" x="29" y="532" width="537" height="43"/>
                                 <constraints>
@@ -78,6 +69,16 @@
                                     <action selector="generate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yuA-w0-wTQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This will determine critical tone of the language." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukI-Bq-wjg">
+                                <rect key="frame" x="142" y="387" width="314" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="314" id="j5J-kM-pTC"/>
+                                    <constraint firstAttribute="height" constant="21" id="mvt-Xp-xdr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -88,7 +89,6 @@
                             <constraint firstItem="JXb-TA-ArG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-17" id="Ing-Xl-sag"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JXb-TA-ArG" secondAttribute="trailing" constant="-15" id="KiI-aq-KOc"/>
                             <constraint firstItem="tMi-cf-VmW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="Q2g-Gt-C0H"/>
-                            <constraint firstItem="ukI-Bq-wjg" firstAttribute="top" secondItem="QOa-DQ-w3w" secondAttribute="bottom" constant="8" id="Q6f-aZ-brL"/>
                             <constraint firstItem="JXb-TA-ArG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="W6h-75-tcE"/>
                             <constraint firstAttribute="centerX" secondItem="ukI-Bq-wjg" secondAttribute="centerX" id="YCN-tX-pHk"/>
                             <constraint firstItem="3ac-oM-iIw" firstAttribute="trailing" secondItem="tYw-AI-OrM" secondAttribute="trailing" id="a3D-xJ-Hoj"/>
@@ -171,11 +171,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zD2-r8-bit">
                                 <rect key="frame" x="26" y="141" width="549" height="294"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgz-bk-z9V">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgz-bk-z9V">
                                         <rect key="frame" x="8" y="8" width="533" height="278"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
@@ -231,6 +231,7 @@
                         <outlet property="businessType" destination="4Yk-oU-vAo" id="XMU-Oo-Nuw"/>
                         <outlet property="floatRatingView" destination="FZM-Di-V0H" id="V7b-3x-0HN"/>
                         <outlet property="generateButton" destination="Zkc-hf-N4A" id="LMp-9G-dq3"/>
+                        <outlet property="resultContainer" destination="zD2-r8-bit" id="dNb-aZ-77g"/>
                         <outlet property="resultText" destination="Dgz-bk-z9V" id="mem-SK-JmR"/>
                     </connections>
                 </viewController>
