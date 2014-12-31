@@ -63,8 +63,8 @@
 		4C0D0FE91A5097C000279404 = {
 			isa = PBXGroup;
 			children = (
-				4C0D0FF41A5097C000279404 /* YelpReview */,
-				4C0D100A1A5097C000279404 /* YelpReviewTests */,
+				4C0D0FF41A5097C000279404 /* ReviewGenerator */,
+				4C0D100A1A5097C000279404 /* ReviewGeneratorTests */,
 				4C0D0FF31A5097C000279404 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C0D0FF41A5097C000279404 /* YelpReview */ = {
+		4C0D0FF41A5097C000279404 /* ReviewGenerator */ = {
 			isa = PBXGroup;
 			children = (
 				4C0D0FF71A5097C000279404 /* AppDelegate.swift */,
@@ -90,6 +90,7 @@
 				4C0D0FF51A5097C000279404 /* Supporting Files */,
 				4CE5B87C1A51B43E006F79B3 /* FloatRatingView.swift */,
 			);
+			name = ReviewGenerator;
 			path = YelpReview;
 			sourceTree = "<group>";
 		};
@@ -101,12 +102,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4C0D100A1A5097C000279404 /* YelpReviewTests */ = {
+		4C0D100A1A5097C000279404 /* ReviewGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
 				4C0D100D1A5097C000279404 /* YelpReviewTests.swift */,
 				4C0D100B1A5097C000279404 /* Supporting Files */,
 			);
+			name = ReviewGeneratorTests;
 			path = YelpReviewTests;
 			sourceTree = "<group>";
 		};
