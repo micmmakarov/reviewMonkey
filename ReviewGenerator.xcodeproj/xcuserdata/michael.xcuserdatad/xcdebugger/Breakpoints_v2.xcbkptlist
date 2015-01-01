@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpReview/resultViewController.swift"
-            timestampString = "441751511.464976"
+            timestampString = "441765120.032934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "generate(_:business:)"
             landmarkType = "5">
             <Locations>
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpReview/resultViewController.swift"
-            timestampString = "441751254.825091"
+            timestampString = "441765120.032934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "getRating(_:business:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpReview/resultViewController.swift"
-            timestampString = "441751352.856786"
+            timestampString = "441765120.032934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "generate(_:business:)"
             landmarkType = "5">
          </BreakpointContent>

@@ -11,9 +11,23 @@ import UIKit
 class resultViewController: UIViewController, FloatRatingViewDelegate {
     
     var stars: Int = 0;
+    var regenerations = 0;
     var business: String = "";
     var initialized = false;
-    var case1 = false;
+    var case1 = false
+    let loadingLabels = ["currently :N: monkeys are working on writing your rewiew", "the server is connecting to the future through :W:", "loading organic coffee to the server to generate a review", "using organic bycicle energy to write this review", "watching a netflix episod to get inspired for this one", "feeding server with kombucha", "looking at :N: images of cute kittens for inspiration"]
+    let lw = ["matrix", "tv", "monkeys", "magic mongks", "kittens"]
+    
+    func getLoadingLabel() -> String {
+        var randomIndex = Int(arc4random_uniform(UInt32(self.loadingLabels.count)))
+        var randomLabel = self.loadingLabels[randomIndex]
+        randomIndex = Int(arc4random_uniform(UInt32(self.lw.count)))
+        var randomWord = self.lw[randomIndex]
+        let randomNumber = String(arc4random_uniform(UInt32(20)))
+        var result =
+        randomLabel.stringByReplacingOccurrencesOfString(":N:", withString: randomNumber, options: NSStringCompareOptions.LiteralSearch, range: nil).stringByReplacingOccurrencesOfString(":W:", withString: randomWord, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        return result
+    }
     
     @IBOutlet var floatRatingView: FloatRatingView!
     @IBOutlet weak var businessType: UILabel!
@@ -24,6 +38,31 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     var back: UIImageView!
     var front: UIImageView!
     var result: UITextView!
+    var loading = false
+    @IBOutlet weak var loadingView: UIView!
+    
+    @IBOutlet weak var loadingTextView: UITextView!
+    
+    func startLoading() {
+        self.loading = true
+        self.generateButton.hidden = true
+        self.copyToClipboardBtn.hidden = true
+        self.loadingView.hidden = false
+        self.loadingTextView.text = getLoadingLabel()
+    }
+    
+    func stopLoading() {
+        if self.regenerations == 3 {
+            self.generateButton.setTitle("New review", forState: UIControlState.Normal)
+        }
+        self.loadingView.hidden = true
+        self.loading = false
+        self.generateButton.hidden = false
+        self.copyToClipboardBtn.hidden = false
+        UIView.animateWithDuration(0.5, animations: {
+            self.resultText.alpha = 1
+        })
+    }
 
     // Main API call
     func getRating(stars: Int, business: String, completion: (rating: String) -> Void) {
@@ -48,6 +87,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         generate(self.stars, business: self.business)
     }
     
+    @IBOutlet weak var copyToClipboardBtn: UIButton!
     @IBAction func copyToClipboardButton(sender: AnyObject) {
         UIPasteboard.generalPasteboard().string = self.resultText.text
         let alert = UIAlertView()
@@ -77,6 +117,8 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         self.floatRatingView.contentMode = UIViewContentMode.ScaleAspectFit
 
         self.floatRatingView.rating = 3
+        self.loadingView.hidden = true
+
         self.initialized = true
         //self.generateButton.backgroundColor = UIColor.blueColor()
         self.back = UIImageView(image: UIImage(named: "StarFull"))
@@ -109,25 +151,41 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         //UIView.animateWithDuration(0.5, animations: {
         //    self.resultContainer.alpha = 0
         //})
+        self.regenerations++
+        if self.regenerations < 4 {
+        
         if self.initialized {
-            self.resultText.hidden = true
+            //self.resultText.hidden = true
+            self.resultText.alpha = 0
+            self.startLoading()
             if self.case1 == false {
-                UIView.transitionFromView(self.back, toView: self.front, duration: 0.3, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+                UIView.transitionFromView(self.back, toView: self.front, duration: 5, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: {
+                    (fininshed: Bool) -> () in
+                    self.stopLoading()
+                })
                 self.case1 = true
             } else {
-                UIView.transitionFromView(self.front, toView: self.back, duration: 0.3, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+                UIView.transitionFromView(self.front, toView: self.back, duration: 5, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: {
+                    (fininshed: Bool) -> () in
+                    self.stopLoading()
+                })
                 self.case1 = false
             }
         }
-        getRating(stars, business: "Bar") { (review) -> Void in
-            self.stars = stars
-            self.business = business
-            self.businessType.text = business.capitalizedString
-            self.floatRatingView.rating = Float(stars)
-            if self.resultText.hidden {self.resultText.hidden = false}
-            self.resultText.text = review
-            self.resultText.setContentOffset(CGPointMake(0, 0), animated: false)
-            
+            getRating(stars, business: "Bar") { (review) -> Void in
+                self.stars = stars
+                self.business = business
+                self.businessType.text = business.capitalizedString
+                self.floatRatingView.rating = Float(stars)
+                //if self.resultText.hidden {self.resultText.hidden = false}
+                self.resultText.text = review
+                self.resultText.setContentOffset(CGPointMake(0, 0), animated: false)
+                self.resultText.font = UIFont(name: "Helvetica", size: 18)
+
+            }
+        } else {
+           self.navigationController?.popViewControllerAnimated(true)
+           // self.dismissViewControllerAnimated(true, completion: nil)
         }
     
     }

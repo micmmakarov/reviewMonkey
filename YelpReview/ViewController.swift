@@ -63,6 +63,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
 
     @IBAction func generate(sender: AnyObject) {
         let view = self.storyboard?.instantiateViewControllerWithIdentifier("result") as resultViewController
+        //view.navigationController = self.navigationController
         view.generate(Int(self.floatRatingView.rating), business: "bar")
         self.navigationController?.pushViewController(view, animated: true)
     }
