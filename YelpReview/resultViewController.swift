@@ -49,11 +49,16 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         self.copyToClipboardBtn.hidden = true
         self.loadingView.hidden = false
         self.loadingTextView.text = getLoadingLabel()
+        self.loadingTextView.font = UIFont(name: "Helvetica", size: 16)
+
     }
     
     func stopLoading() {
         if self.regenerations == 3 {
             self.generateButton.setTitle("New review", forState: UIControlState.Normal)
+            self.generateButton.backgroundColor = self.UIColorFromRGB(0x81451D)
+            self.generateButton.tintColor = self.UIColorFromRGB(0xFFFFFF)
+
         }
         self.loadingView.hidden = true
         self.loading = false

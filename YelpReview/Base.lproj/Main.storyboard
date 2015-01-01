@@ -48,9 +48,9 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMi-cf-VmW">
-                                <rect key="frame" x="29" y="532" width="537" height="43"/>
+                                <rect key="frame" x="29" y="535" width="537" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="3zV-ou-Xa8"/>
+                                    <constraint firstAttribute="height" constant="50" id="3zV-ou-Xa8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Generate">
@@ -97,7 +97,7 @@
                             <constraint firstItem="tYw-AI-OrM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="fqp-13-luU"/>
                             <constraint firstAttribute="centerX" secondItem="QOa-DQ-w3w" secondAttribute="centerX" id="mJ8-lC-jjv"/>
                             <constraint firstItem="ukI-Bq-wjg" firstAttribute="top" secondItem="QOa-DQ-w3w" secondAttribute="bottom" constant="8" id="rr1-vg-BaL"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tMi-cf-VmW" secondAttribute="bottom" constant="25" id="wq3-0R-H7u"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tMi-cf-VmW" secondAttribute="bottom" constant="15" id="wq3-0R-H7u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Review Details" id="3Yj-K9-vDr" colorLabel="IBBuiltInLabel-Orange">
@@ -222,7 +222,7 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-fC-zsk">
                                         <rect key="frame" x="290" y="38" width="20" height="20"/>
                                     </activityIndicatorView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whe-SR-Bmn">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Whe-SR-Bmn">
                                         <rect key="frame" x="150" y="66" width="300" height="77"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
