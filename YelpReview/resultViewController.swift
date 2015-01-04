@@ -18,6 +18,8 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     let loadingLabels = ["Currently :N: monkeys are working on writing your rewiew", "The server is connecting to the future through :W:", "Loading organic coffee to the server to generate a review", "Using organic bicycle energy to create this review", "Watching a Netflix series to get inspired for this one", "Feeding the server with kombucha", "Looking at :N: images of cute kittens for inspiration"]
     let lw = ["matrix", "tv", "monkeys", "magic mongks", "kittens"]
     
+    @IBOutlet weak var MonkeyFace: UIImageView!
+    
     func getLoadingLabel() -> String {
         var randomIndex = Int(arc4random_uniform(UInt32(self.loadingLabels.count)))
         var randomLabel = self.loadingLabels[randomIndex]
@@ -53,6 +55,8 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         self.loadingView.hidden = false
         self.loadingTextView.text = getLoadingLabel()
         self.loadingTextView.font = UIFont(name: "Helvetica", size: 16)
+        self.MonkeyFace.alpha = 1
+
 
     }
     
@@ -69,6 +73,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         self.shareView.hidden = false
         UIView.animateWithDuration(0.5, animations: {
             self.resultText.alpha = 1
+            self.MonkeyFace.alpha = 0
         })
     }
 
@@ -143,6 +148,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
 
         self.floatRatingView.rating = 3
         self.loadingView.hidden = true
+        self.MonkeyFace.alpha = 0
 
         self.initialized = true
         //self.generateButton.backgroundColor = UIColor.blueColor()
