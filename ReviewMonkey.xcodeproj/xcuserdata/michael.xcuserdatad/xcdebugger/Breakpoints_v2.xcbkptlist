@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpReview/resultViewController.swift"
-            timestampString = "442025291.985186"
+            timestampString = "442027829.237531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "generate(_:business:)"
             landmarkType = "5">
             <Locations>
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpReview/resultViewController.swift"
-            timestampString = "442025291.985186"
+            timestampString = "442027829.237531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "generate(_:business:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,12 +88,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpReview/ViewController.swift"
-            timestampString = "441783222.728832"
+            timestampString = "442031655.9709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "generate(_:)"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "floatRatingView(_:isUpdating:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YelpReview/resultViewController.swift"
+            timestampString = "442027829.237531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "shareAction(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

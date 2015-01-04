@@ -8,15 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate, FloatRatingViewDelegate {
+class ViewController: UIViewController, FloatRatingViewDelegate {
 
-    @IBOutlet weak var businessPicker: UIPickerView!
     @IBOutlet weak var businessLabel: UILabel!
     @IBOutlet var floatRatingView: FloatRatingView!
     @IBOutlet weak var generateButton: UIButton!
     var currentBusiness = ""
     
-    let pickerData = ["Bar", "Hotel", "DMV", "Post-Office", "Hospital", "Funeral-Home", "Restaurant"]
+    let pickerData = ["Bar", "Hotel", "DMV"]
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
@@ -47,12 +46,40 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         self.generateButton.tintColor = self.UIColorFromRGB(0x81451D)
         //self.generateButton.backgroundColor = UIColor.blueColor()
         
-        businessPicker.dataSource = self
-        businessPicker.delegate = self
-        businessPicker.selectRow(4, inComponent: 0, animated: true)
         self.navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
     }
 
+    @IBOutlet weak var BusinessTypeButton: UIButton!
+    @IBAction func chooseBusinessType(sender: AnyObject) {
+        
+            //Create the AlertController
+            let actionSheetController: UIAlertController = UIAlertController(title: "Business Type", message: "Choose a business type", preferredStyle: .ActionSheet)
+            
+            //Create and add the Cancel action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+                //Just dismiss the action sheet
+            }
+            actionSheetController.addAction(cancelAction)
+
+            for business: String in pickerData {
+                let businessTypeOption: UIAlertAction = UIAlertAction(title: business, style: .Default) { action -> Void in
+                    self.currentBusiness = business
+                    self.BusinessTypeButton.setTitle(business, forState: UIControlState.Normal)
+                    //Code for launching the camera goes here
+                }
+                actionSheetController.addAction(businessTypeOption)
+            }
+            //Create and add first option action
+            //Create and add a second option action
+        
+            //We need to provide a popover sourceView when using it on iPad
+            actionSheetController.popoverPresentationController?.sourceView = sender as UIView;
+            
+            //Present the AlertController
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+        
+        
+    }
     @IBAction func generate(sender: AnyObject) {
         let view = self.storyboard?.instantiateViewControllerWithIdentifier("result") as resultViewController
         //view.navigationController = self.navigationController
@@ -65,23 +92,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         // Dispose of any resources that can be recreated.
     }
 
-    //MARK: - Delegates and data sources
-    //MARK: Data Sources
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return pickerData[row]
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.currentBusiness = pickerData[row]
-    }
-    
     // MARK: FloatRatingViewDelegate
     
     func floatRatingView(ratingView: FloatRatingView, isUpdating rating:Float) {
