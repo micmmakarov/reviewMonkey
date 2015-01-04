@@ -39,6 +39,8 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     var front: UIImageView!
     var result: UITextView!
     var loading = false
+    var shareText = ""
+    var shareUrl = ""
     @IBOutlet weak var loadingView: UIView!
     
     @IBOutlet weak var loadingTextView: UITextView!
@@ -46,7 +48,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     func startLoading() {
         self.loading = true
         self.generateButton.hidden = true
-        self.copyToClipboardBtn.hidden = true
+        self.shareView.hidden = true
         self.loadingView.hidden = false
         self.loadingTextView.text = getLoadingLabel()
         self.loadingTextView.font = UIFont(name: "Helvetica", size: 16)
@@ -54,7 +56,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     }
     
     func stopLoading() {
-        if self.regenerations == 3 {
+        if self.regenerations == 2 {
             self.generateButton.setTitle("New review", forState: UIControlState.Normal)
             self.generateButton.backgroundColor = self.UIColorFromRGB(0x81451D)
             self.generateButton.tintColor = self.UIColorFromRGB(0xFFFFFF)
@@ -63,7 +65,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         self.loadingView.hidden = true
         self.loading = false
         self.generateButton.hidden = false
-        self.copyToClipboardBtn.hidden = false
+        self.shareView.hidden = false
         UIView.animateWithDuration(0.5, animations: {
             self.resultText.alpha = 1
         })
@@ -71,7 +73,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
 
     // Main API call
     func getRating(stars: Int, business: String, completion: (rating: String) -> Void) {
-        var url = NSURL(string: "http://www.yelpreviewgenerator.com/review/\(stars)/\(business).json")
+        var url = NSURL(string: "http://www.reviewmonkeyapp.com/review/\(stars)/\(business).json")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 var error: NSError?;
@@ -81,6 +83,8 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
                 // Call closure
                 if let decodedObject = jsonObject as? NSDictionary {
                     let review = decodedObject["review"]! as String
+                    self.shareText = decodedObject["shareText"]! as String
+                    self.shareUrl = decodedObject["shareUrl"]! as String
                     completion(rating: review)
                 }
             })
@@ -92,8 +96,23 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         generate(self.stars, business: self.business)
     }
     
-    @IBOutlet weak var copyToClipboardBtn: UIButton!
+    @IBOutlet weak var shareView: UIView!
+    
+    @IBAction func shareAction(sender: AnyObject) {
+        let textToShare = "I just wrote a \(self.stars)-star review for a \(self.business): " + self.resultText.text
+        
+        if let myWebsite = NSURL(string: "http://www.reviewmonkeyapp.com/")
+        {
+            let objectsToShare = [textToShare, myWebsite]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            // activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+            
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }    }
+    
     @IBAction func copyToClipboardButton(sender: AnyObject) {
+        
         UIPasteboard.generalPasteboard().string = self.resultText.text
         let alert = UIAlertView()
         alert.title = "Done"
@@ -157,7 +176,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         //    self.resultContainer.alpha = 0
         //})
         self.regenerations++
-        if self.regenerations < 4 {
+        if self.regenerations < 3 {
         
         if self.initialized {
             //self.resultText.hidden = true
@@ -177,7 +196,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
                 self.case1 = false
             }
         }
-            getRating(stars, business: "Bar") { (review) -> Void in
+            getRating(stars, business: business) { (review) -> Void in
                 self.stars = stars
                 self.business = business
                 self.businessType.text = business.capitalizedString

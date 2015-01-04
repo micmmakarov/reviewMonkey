@@ -14,8 +14,9 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     @IBOutlet weak var businessLabel: UILabel!
     @IBOutlet var floatRatingView: FloatRatingView!
     @IBOutlet weak var generateButton: UIButton!
+    var currentBusiness = ""
     
-    let pickerData = ["Bar", "Hotel", "DMV", "Massage-HE", "Hospital", "Funeral-Home", "Restaurant"]
+    let pickerData = ["Bar", "Hotel", "DMV", "Post-Office", "Hospital", "Funeral-Home", "Restaurant"]
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
@@ -28,11 +29,9 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // Required float rating view params
         self.floatRatingView.emptyImage = UIImage(named: "StarEmpty")
         self.floatRatingView.fullImage = UIImage(named: "StarFull")
-        // Optional params
+
         self.floatRatingView.delegate = self
         self.floatRatingView.contentMode = UIViewContentMode.ScaleAspectFit
         self.floatRatingView.maxRating = 5
@@ -47,13 +46,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         self.generateButton.layer.cornerRadius = 4.0
         self.generateButton.tintColor = self.UIColorFromRGB(0x81451D)
         //self.generateButton.backgroundColor = UIColor.blueColor()
-
-        // Segmented control init
-        // self.ratingSegmentedControl.selectedSegmentIndex = 1
-        
-        // Labels init
-        // self.liveLabel.text = NSString(format: "%.2f", self.floatRatingView.rating)
-        //self.updatedLabel.text = NSString(format: "%.2f", self.floatRatingView.rating)
         
         businessPicker.dataSource = self
         businessPicker.delegate = self
@@ -64,7 +56,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     @IBAction func generate(sender: AnyObject) {
         let view = self.storyboard?.instantiateViewControllerWithIdentifier("result") as resultViewController
         //view.navigationController = self.navigationController
-        view.generate(Int(self.floatRatingView.rating), business: "bar")
+        view.generate(Int(self.floatRatingView.rating), business: self.currentBusiness)
         self.navigationController?.pushViewController(view, animated: true)
     }
     
@@ -87,7 +79,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // businessLabel.text = pickerData[row]
+        self.currentBusiness = pickerData[row]
     }
     
     // MARK: FloatRatingViewDelegate
