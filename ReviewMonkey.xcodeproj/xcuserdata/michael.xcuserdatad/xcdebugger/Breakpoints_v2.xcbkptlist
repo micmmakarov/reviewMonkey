@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpReview/ViewController.swift"
-            timestampString = "442031655.9709"
+            timestampString = "442040234.933995"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "floatRatingView(_:isUpdating:)"
             landmarkType = "5">
          </BreakpointContent>

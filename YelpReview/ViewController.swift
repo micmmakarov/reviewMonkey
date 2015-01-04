@@ -26,6 +26,7 @@ class ViewController: UIViewController, FloatRatingViewDelegate {
         )
     }
     
+    @IBOutlet weak var MonkeyTalk: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.floatRatingView.emptyImage = UIImage(named: "StarEmpty")
@@ -39,6 +40,15 @@ class ViewController: UIViewController, FloatRatingViewDelegate {
         self.floatRatingView.editable = true
         self.floatRatingView.halfRatings = false
         self.floatRatingView.floatRatings = false
+
+        self.currentBusiness = pickerData[0]
+        self.BusinessTypeButton.setTitle(pickerData[0], forState: UIControlState.Normal)
+        //self.generateButton.layer.borderColor = self.UIColorFromRGB(0x81451D).CGColor
+        //self.generateButton.layer.borderWidth = 2
+        //self.generateButton.layer.cornerRadius = 4.0
+        self.BusinessTypeButton.tintColor = self.UIColorFromRGB(0xFFFFFF)
+        self.BusinessTypeButton.backgroundColor = self.UIColorFromRGB(0xFBE0C3)
+
         
         self.generateButton.layer.borderColor = self.UIColorFromRGB(0x81451D).CGColor
         self.generateButton.layer.borderWidth = 2
