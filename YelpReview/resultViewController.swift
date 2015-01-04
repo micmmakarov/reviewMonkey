@@ -15,7 +15,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     var business: String = "";
     var initialized = false;
     var case1 = false
-    let loadingLabels = ["currently :N: monkeys are working on writing your rewiew", "the server is connecting to the future through :W:", "loading organic coffee to the server to generate a review", "using organic bycicle energy to write this review", "watching a netflix episod to get inspired for this one", "feeding server with kombucha", "looking at :N: images of cute kittens for inspiration"]
+    let loadingLabels = ["Currently :N: monkeys are working on writing your rewiew", "The server is connecting to the future through :W:", "Loading organic coffee to the server to generate a review", "Using organic bicycle energy to create this review", "Watching a Netflix series to get inspired for this one", "Feeding the server with kombucha", "Looking at :N: images of cute kittens for inspiration"]
     let lw = ["matrix", "tv", "monkeys", "magic mongks", "kittens"]
     
     func getLoadingLabel() -> String {
