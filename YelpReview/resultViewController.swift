@@ -35,6 +35,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     @IBOutlet weak var resultText: UITextView!
     @IBOutlet weak var generateButton: UIButton!
     @IBOutlet weak var resultContainer: UIView!
+    var approaches = 3
     var back: UIImageView!
     var front: UIImageView!
     var result: UITextView!
@@ -56,7 +57,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     }
     
     func stopLoading() {
-        if self.regenerations == 2 {
+        if self.regenerations == self.approaches {
             self.generateButton.setTitle("New review", forState: UIControlState.Normal)
             self.generateButton.backgroundColor = self.UIColorFromRGB(0x81451D)
             self.generateButton.tintColor = self.UIColorFromRGB(0xFFFFFF)
@@ -176,7 +177,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         //    self.resultContainer.alpha = 0
         //})
         self.regenerations++
-        if self.regenerations < 3 {
+        if self.regenerations < self.approaches + 1 {
         
         if self.initialized {
             //self.resultText.hidden = true
