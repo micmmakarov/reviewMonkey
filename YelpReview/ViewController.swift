@@ -41,8 +41,8 @@ class ViewController: UIViewController, FloatRatingViewDelegate {
         self.floatRatingView.halfRatings = false
         self.floatRatingView.floatRatings = false
 
-        self.currentBusiness = pickerData[0]
-        self.BusinessTypeButton.setTitle(pickerData[0], forState: UIControlState.Normal)
+        self.currentBusiness = pickerData[0]        
+        self.BusinessTypeButton.setTitle("\(pickerData[0]) ▼", forState: UIControlState.Normal)
         //self.generateButton.layer.borderColor = self.UIColorFromRGB(0x81451D).CGColor
         //self.generateButton.layer.borderWidth = 2
         //self.generateButton.layer.cornerRadius = 4.0
@@ -74,7 +74,14 @@ class ViewController: UIViewController, FloatRatingViewDelegate {
             for business: String in pickerData {
                 let businessTypeOption: UIAlertAction = UIAlertAction(title: business, style: .Default) { action -> Void in
                     self.currentBusiness = business
-                    self.BusinessTypeButton.setTitle(business, forState: UIControlState.Normal)
+                    self.BusinessTypeButton.setTitle("\(business) ▼", forState: UIControlState.Normal)
+                    let title = "\(business) ▼"
+                    let myNormalAttributedTitle = NSMutableAttributedString(string: title,
+                        attributes: nil)
+                    myNormalAttributedTitle.addAttribute(NSFontAttributeName, value: UIFont(name: "Helvetica", size: 26.0)!, range: NSRange(location:1, length:countElements(title) - 1))
+                    myNormalAttributedTitle.addAttribute(NSFontAttributeName, value: UIFont(name: "Helvetica", size: 14.0)!, range: NSRange(location:countElements(title) - 1, length:1))
+                    
+                    self.BusinessTypeButton.setAttributedTitle(myNormalAttributedTitle, forState: .Normal)
                     //Code for launching the camera goes here
                 }
                 actionSheetController.addAction(businessTypeOption)

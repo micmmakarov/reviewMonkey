@@ -190,13 +190,13 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
             self.resultText.alpha = 0
             self.startLoading()
             if self.case1 == false {
-                UIView.transitionFromView(self.back, toView: self.front, duration: 5, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: {
+                UIView.transitionFromView(self.back, toView: self.front, duration: 3, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: {
                     (fininshed: Bool) -> () in
                     self.stopLoading()
                 })
                 self.case1 = true
             } else {
-                UIView.transitionFromView(self.front, toView: self.back, duration: 5, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: {
+                UIView.transitionFromView(self.front, toView: self.back, duration: 3, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: {
                     (fininshed: Bool) -> () in
                     self.stopLoading()
                 })
