@@ -26,6 +26,8 @@ class ViewController: UIViewController, FloatRatingViewDelegate {
         )
     }
     
+    @IBOutlet weak var MonkeyTalkView: UIView!
+    @IBOutlet weak var StarFormView: UIView!
     @IBOutlet weak var MonkeyTalk: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +59,22 @@ class ViewController: UIViewController, FloatRatingViewDelegate {
         //self.generateButton.backgroundColor = UIColor.blueColor()
         
         self.navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
+
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        if screenHeight == 480 {
+            self.chooseBusinessLabel.hidden = true
+            self.grayComment.hidden = true
+        }
+        
+        
+
     }
 
+    @IBOutlet weak var chooseBusinessLabel: UILabel!
     @IBOutlet weak var BusinessTypeButton: UIButton!
+    @IBOutlet weak var grayComment: UILabel!
     @IBAction func chooseBusinessType(sender: AnyObject) {
         
             //Create the AlertController
