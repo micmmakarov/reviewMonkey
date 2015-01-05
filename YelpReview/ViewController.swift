@@ -78,7 +78,7 @@ class ViewController: UIViewController, FloatRatingViewDelegate {
     @IBAction func chooseBusinessType(sender: AnyObject) {
         
             //Create the AlertController
-            let actionSheetController: UIAlertController = UIAlertController(title: "Business Type", message: "Choose a business type", preferredStyle: .ActionSheet)
+            let actionSheetController: UIAlertController = UIAlertController(title: "Choose a business type", message: "", preferredStyle: .ActionSheet)
             
             //Create and add the Cancel action
             let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
@@ -115,7 +115,9 @@ class ViewController: UIViewController, FloatRatingViewDelegate {
     @IBAction func generate(sender: AnyObject) {
         let view = self.storyboard?.instantiateViewControllerWithIdentifier("result") as resultViewController
         //view.navigationController = self.navigationController
-        view.generate(Int(self.floatRatingView.rating), business: self.currentBusiness)
+        //view.generate(Int(self.floatRatingView.rating), business: self.currentBusiness)
+        view.stars = Int(self.floatRatingView.rating)
+        view.business = self.currentBusiness
         self.navigationController?.pushViewController(view, animated: true)
     }
     

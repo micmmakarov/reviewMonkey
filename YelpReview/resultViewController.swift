@@ -161,6 +161,7 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
 
         self.resultContainer.addSubview(self.front)
         self.resultContainer.addSubview(self.back)
+        self.generate(stars, business: business)
     }
     
     override func didReceiveMemoryWarning() {
@@ -184,7 +185,6 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
         //})
         self.regenerations++
         if self.regenerations < self.approaches + 1 {
-        
         if self.initialized {
             //self.resultText.hidden = true
             self.resultText.alpha = 0
