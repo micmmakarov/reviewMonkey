@@ -98,8 +98,8 @@
                                                 <rect key="frame" x="148" y="136" width="300" height="67"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="38B2C54B-D4B6-4886-B19F-4B87C081E9E5"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="7516AA75-CA79-45CE-8AA2-76067DCDC401"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="CFAAF647-36AF-4775-907A-85069A05A2CE"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="FACB0C83-889B-47FD-9975-D3BA2DC82CCC"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -467,7 +467,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="38B2C54B-D4B6-4886-B19F-4B87C081E9E5" width="40" height="39">
+        <image name="CFAAF647-36AF-4775-907A-85069A05A2CE" width="40" height="39">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -622,7 +622,8 @@ EyIWIhsiKiIuIjUiPSJKIk8iUSJTIlgiYCJjImgicCJzIoUiiCKNAAAAAAAAAgEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAAIo8
 </mutableData>
         </image>
-        <image name="7516AA75-CA79-45CE-8AA2-76067DCDC401" width="40" height="39">
+        <image name="Clipboard" width="18" height="22"/>
+        <image name="FACB0C83-889B-47FD-9975-D3BA2DC82CCC" width="40" height="39">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -777,7 +778,6 @@ EyIWIhsiKiIuIjUiPSJKIk8iUSJTIlgiYCJjImgicCJzIoUiiCKNAAAAAAAAAgEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAAIo8
 </mutableData>
         </image>
-        <image name="Clipboard" width="18" height="22"/>
         <image name="MiniEmpty" width="23" height="21"/>
         <image name="MiniFull" width="23" height="21"/>
         <image name="MonkeyCircle" width="139" height="139"/>

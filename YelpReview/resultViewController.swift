@@ -105,9 +105,9 @@ class resultViewController: UIViewController, FloatRatingViewDelegate {
     @IBOutlet weak var shareView: UIView!
     
     @IBAction func shareAction(sender: AnyObject) {
-        let textToShare = "I just wrote a \(self.stars)-star review for a \(self.business): " + self.resultText.text
+        let textToShare = self.shareText
         
-        if let myWebsite = NSURL(string: "http://www.reviewmonkeyapp.com/")
+        if let myWebsite = NSURL(string: self.shareUrl)
         {
             let objectsToShare = [textToShare, myWebsite]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
