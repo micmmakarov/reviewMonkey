@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OuM-72-Id1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OuM-72-Id1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -98,12 +98,12 @@
                                                 <rect key="frame" x="148" y="136" width="300" height="67"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="CFAAF647-36AF-4775-907A-85069A05A2CE"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="FACB0C83-889B-47FD-9975-D3BA2DC82CCC"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="192A8299-F13B-41D4-AA65-858AA3F69D27"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="CBFD0136-FE98-4F66-A720-D873A955F3BB"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="ukI-Bq-wjg" secondAttribute="centerX" id="8fO-dj-o3H"/>
                                             <constraint firstItem="tYw-AI-OrM" firstAttribute="top" secondItem="o3y-6E-akX" secondAttribute="bottom" constant="44" id="99q-cO-W6c"/>
@@ -122,7 +122,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="APV-GU-T04" secondAttribute="centerY" id="fbS-AQ-mJw"/>
                                     <constraint firstAttribute="centerX" secondItem="APV-GU-T04" secondAttribute="centerX" id="qjT-hK-8Xl"/>
@@ -467,7 +467,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CFAAF647-36AF-4775-907A-85069A05A2CE" width="40" height="39">
+        <image name="192A8299-F13B-41D4-AA65-858AA3F69D27" width="40" height="39">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -622,8 +622,7 @@ EyIWIhsiKiIuIjUiPSJKIk8iUSJTIlgiYCJjImgicCJzIoUiiCKNAAAAAAAAAgEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAAIo8
 </mutableData>
         </image>
-        <image name="Clipboard" width="18" height="22"/>
-        <image name="FACB0C83-889B-47FD-9975-D3BA2DC82CCC" width="40" height="39">
+        <image name="CBFD0136-FE98-4F66-A720-D873A955F3BB" width="40" height="39">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -778,6 +777,7 @@ EyIWIhsiKiIuIjUiPSJKIk8iUSJTIlgiYCJjImgicCJzIoUiiCKNAAAAAAAAAgEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAAIo8
 </mutableData>
         </image>
+        <image name="Clipboard" width="18" height="22"/>
         <image name="MiniEmpty" width="23" height="21"/>
         <image name="MiniFull" width="23" height="21"/>
         <image name="MonkeyCircle" width="139" height="139"/>
